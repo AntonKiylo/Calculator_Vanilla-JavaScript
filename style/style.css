@@ -1,0 +1,57 @@
+*, ::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+
+section {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    width: fit-content;
+    margin: 20px auto;
+    background-color: cornflowerblue;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+section > button {
+    cursor: pointer;
+    font-size: 30px;
+    border: 1px solid #fff;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+    transition: 500ms;
+}
+
+section > button:hover {
+    background-color: rgba(255, 255, 255, .9);
+}
+
+section > button:nth-child(2), section > button:nth-child(19) {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 24px;
+}
+
+.current-operand {
+    color: #fff;
+    font-size: 30px;
+}
